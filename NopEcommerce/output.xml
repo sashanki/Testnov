@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20201130 13:59:33.515" generator="Robot 3.2.2 (Python 2.7.16 on win32)">
+<suite source="C:\Users\sashank.i\Downloads\NopEcommerce" id="s1" name="NopEcommerce">
+<suite source="C:\Users\sashank.i\Downloads\NopEcommerce\TestCases" id="s1-s1" name="TestCases">
+<suite source="C:\Users\sashank.i\Downloads\NopEcommerce\TestCases\NopEcommerce_admin.robot" id="s1-s1-s1" name="NopEcommerce admin">
+<kw type="setup" name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20201130 13:59:34.050" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" endtime="20201130 13:59:37.703" starttime="20201130 13:59:34.049"></status>
+</kw>
+<test id="s1-s1-s1-t1" name="Create new customer flow">
+<kw type="setup" name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>https://admin-demo.nopcommerce.com/</arg>
+</arguments>
+<msg timestamp="20201130 13:59:37.706" level="INFO">Opening url 'https://admin-demo.nopcommerce.com/'</msg>
+<status status="PASS" endtime="20201130 13:59:42.240" starttime="20201130 13:59:37.705"></status>
+</kw>
+<kw name="Login to the site">
+<arguments>
+<arg>admin@yourstore.com</arg>
+<arg>admin</arg>
+</arguments>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20201130 13:59:44.395" starttime="20201130 13:59:42.245"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${txt_email}</arg>
+</arguments>
+<status status="PASS" endtime="20201130 13:59:44.536" starttime="20201130 13:59:44.396"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_email}</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20201130 13:59:44.542" level="INFO">Typing text 'admin@yourstore.com' into text field 'id=Email'.</msg>
+<status status="PASS" endtime="20201130 13:59:44.745" starttime="20201130 13:59:44.539"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_pwd}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201130 13:59:44.746" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg timestamp="20201130 13:59:44.816" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20201130 13:59:44.875" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" endtime="20201130 13:59:44.876" starttime="20201130 13:59:44.745"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_login}</arg>
+</arguments>
+<msg timestamp="20201130 13:59:44.877" level="INFO">Clicking button 'xpath=//input[contains(@value,'Log in')]'.</msg>
+<status status="PASS" endtime="20201130 13:59:51.842" starttime="20201130 13:59:44.876"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${lnk_Customer}</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" endtime="20201130 13:59:51.908" starttime="20201130 13:59:51.843"></status>
+</kw>
+<status status="PASS" endtime="20201130 13:59:51.909" starttime="20201130 13:59:42.242"></status>
+</kw>
+<kw name="Choose Customer">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${lnk_Customer}</arg>
+</arguments>
+<msg timestamp="20201130 13:59:51.911" level="INFO">Clicking element 'xpath=(//ul[@class='sidebar-menu tree']//span[text()='Customers'])[1]'.</msg>
+<status status="PASS" endtime="20201130 13:59:51.980" starttime="20201130 13:59:51.910"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${cust_list}</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" endtime="20201130 13:59:52.012" starttime="20201130 13:59:51.981"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${cust_list}</arg>
+</arguments>
+<msg timestamp="20201130 13:59:52.013" level="INFO">Clicking element 'xpath=(//a[@href='/Admin/Customer/List'])[1]'.</msg>
+<status status="PASS" endtime="20201130 13:59:55.575" starttime="20201130 13:59:52.012"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${btn_newCust}</arg>
+</arguments>
+<status status="PASS" endtime="20201130 13:59:55.612" starttime="20201130 13:59:55.576"></status>
+</kw>
+<status status="PASS" endtime="20201130 13:59:55.612" starttime="20201130 13:59:51.909"></status>
+</kw>
+<kw name="Add new customer">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_newCust}</arg>
+</arguments>
+<msg timestamp="20201130 13:59:55.614" level="INFO">Clicking element 'xpath=//a[@href='/Admin/Customer/Create']'.</msg>
+<status status="PASS" endtime="20201130 13:59:57.111" starttime="20201130 13:59:55.613"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${txt_newCustEmail}</arg>
+</arguments>
+<status status="PASS" endtime="20201130 13:59:57.142" starttime="20201130 13:59:57.112"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_newCustEmail}</arg>
+<arg>testuser@gmail.com</arg>
+</arguments>
+<msg timestamp="20201130 13:59:57.143" level="INFO">Typing text 'testuser@gmail.com' into text field 'id=Email'.</msg>
+<status status="PASS" endtime="20201130 13:59:57.328" starttime="20201130 13:59:57.143"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_newCustPwd}</arg>
+<arg>test</arg>
+</arguments>
+<msg timestamp="20201130 13:59:57.329" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg timestamp="20201130 13:59:57.402" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20201130 13:59:57.472" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" endtime="20201130 13:59:57.472" starttime="20201130 13:59:57.328"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txtFName}</arg>
+<arg>testuser1</arg>
+</arguments>
+<msg timestamp="20201130 13:59:57.474" level="INFO">Typing text 'testuser1' into text field 'id=FirstName'.</msg>
+<status status="PASS" endtime="20201130 13:59:57.692" starttime="20201130 13:59:57.473"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txtLName}</arg>
+<arg>SampleUser</arg>
+</arguments>
+<msg timestamp="20201130 13:59:57.694" level="INFO">Typing text 'SampleUser' into text field 'id=LastName'.</msg>
+<status status="PASS" endtime="20201130 13:59:57.843" starttime="20201130 13:59:57.693"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${rdbtn_male}</arg>
+</arguments>
+<msg timestamp="20201130 13:59:57.844" level="INFO">Clicking element 'id=Gender_Male'.</msg>
+<status status="PASS" endtime="20201130 13:59:57.917" starttime="20201130 13:59:57.843"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_DOB}</arg>
+<arg>11/18/2020</arg>
+</arguments>
+<msg timestamp="20201130 13:59:57.920" level="INFO">Typing text '11/18/2020' into text field 'id=DateOfBirth'.</msg>
+<status status="PASS" endtime="20201130 13:59:58.078" starttime="20201130 13:59:57.918"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_Company}</arg>
+<arg>TestCompany</arg>
+</arguments>
+<msg timestamp="20201130 13:59:58.079" level="INFO">Typing text 'TestCompany' into text field 'id=Company'.</msg>
+<status status="PASS" endtime="20201130 13:59:58.217" starttime="20201130 13:59:58.078"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_save}</arg>
+</arguments>
+<msg timestamp="20201130 13:59:58.219" level="INFO">Clicking button 'name=save'.</msg>
+<status status="PASS" endtime="20201130 14:00:00.767" starttime="20201130 13:59:58.217"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${newCustAlert}</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" endtime="20201130 14:00:00.809" starttime="20201130 14:00:00.768"></status>
+</kw>
+<status status="PASS" endtime="20201130 14:00:00.809" starttime="20201130 13:59:55.613"></status>
+</kw>
+<doc>Check the mobile purchase flow</doc>
+<status status="PASS" endtime="20201130 14:00:00.809" critical="yes" starttime="20201130 13:59:37.703"></status>
+</test>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20201130 14:00:03.147" starttime="20201130 14:00:00.811"></status>
+</kw>
+<doc>Verifying the admin portal</doc>
+<status status="PASS" endtime="20201130 14:00:03.147" starttime="20201130 13:59:33.608"></status>
+</suite>
+<status status="PASS" endtime="20201130 14:00:03.151" starttime="20201130 13:59:33.601"></status>
+</suite>
+<status status="PASS" endtime="20201130 14:00:03.153" starttime="20201130 13:59:33.575"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="NopEcommerce" pass="1">NopEcommerce</stat>
+<stat fail="0" id="s1-s1" name="TestCases" pass="1">NopEcommerce.TestCases</stat>
+<stat fail="0" id="s1-s1-s1" name="NopEcommerce admin" pass="1">NopEcommerce.TestCases.NopEcommerce admin</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
