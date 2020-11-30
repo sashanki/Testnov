@@ -1,4 +1,5 @@
 *** Settings ***
+Library    String
 Documentation    Verifying the admin portal
 Library    SeleniumLibrary    
 Suite Setup    Open Browser  browser=chrome
@@ -54,10 +55,11 @@ Choose Customer
  
 Add new customer
     Click Element    ${btn_newCust}    
-    Wait Until Element Is Visible    ${txt_newCustEmail}    
-    Input Text    ${txt_newCustEmail}    testuser@gmail.com    
+    Wait Until Element Is Visible    ${txt_newCustEmail}   
+    ${ret} =  Generate Random String	    2    [NUMBERS]
+    Input Text    ${txt_newCustEmail}    testuser+${ret}+@gmail.com   
     Input Password    ${txt_newCustPwd}    test
-    Input Text    ${txtFName}    testuser1    
+    Input Text    ${txtFName}    testuser1     
     Input Text    ${txtLName}    SampleUser    
     #Select Radio Button    ${rdbtn_male}    M
     Click Element    ${rdbtn_male}    
