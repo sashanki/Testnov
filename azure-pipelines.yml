@@ -1,0 +1,13 @@
+- task: AzureLoadTest@1
+  inputs:
+    azureSubscription: $(serviceConnection)
+    loadTestConfigFile: 'SampleApp.yaml'
+    resourceGroup: $(loadTestResourceGroup)
+    loadTestResource: $(loadTestResource)
+    env: |
+      [
+        {
+        "name": "webapp",
+        "value": "$(webAppName).azurewebsites.net"
+        }
+      ]
